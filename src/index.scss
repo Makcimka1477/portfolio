@@ -1,0 +1,100 @@
+// CSS
+// THEME VARS
+// // dark theme
+:root[data-theme="dark"] {
+  --main: rgb(36, 36, 36);
+  --secondary: rgba(255, 255, 255, 0.95);
+}
+
+// // light theme
+:root[data-theme="light"] {
+  --main: rgba(255, 255, 255, 0.95);
+  --secondary: rgba(36, 36, 36, 1);
+}
+
+// SCSS
+// VARS
+$perfect-border-radius: 8px;
+$contrast-color: rgb(77, 63, 190, 1);
+
+// MIXINS
+@mixin imgSizeWH($width, $height) {
+  max-width: $width;
+  max-height: $height;
+  object-fit: cover;
+}
+
+@mixin containerWP($maxWidth, $padding) {
+  max-width: $maxWidth;
+  padding: $padding;
+  margin: 0 auto;
+}
+
+@mixin flexAJ($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// RESET STYLES
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// STYLES
+
+html {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html,
+#root,
+body {
+  height: 100%;
+}
+
+body {
+  color: var(--secondary-dark);
+}
+
+// BUTTONS
+button {
+  padding: 10px 15px;
+
+  border: 1px solid transparent;
+  border-radius: $perfect-border-radius;
+  outline: none;
+  background-color: var(--secondary-dark);
+
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  &:hover {
+    border-color: #646cff;
+  }
+  &:focus,
+  &:focus-visible {
+    box-shadow: 0 0 5px#fff;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

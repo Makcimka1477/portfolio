@@ -1,0 +1,74 @@
+@import "../../../index";
+
+.home {
+  text-align: center;
+  background-color: var(--main);
+  transition: background-color 0.2s ease-in-out;
+  .header {
+    min-height: 600px;
+    color: var(--secondary);
+    @include flexAJ(center, center);
+
+    h1:first-child {
+      margin-bottom: 10px;
+    }
+    h2:nth-child(2) {
+      margin-bottom: 15px;
+    }
+
+    .subtitlePassion {
+      font-weight: 500;
+    }
+  }
+
+  .skills {
+    @include flexAJ(center, center);
+    min-height: 200px;
+    margin-bottom: 20px;
+
+    background-color: var(--secondary);
+    color: var(--main);
+
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    .mySkillsList {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      row-gap: 10px;
+      margin-top: 15px;
+
+      .mySkillsItem {
+        font-size: 1.2rem;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  @include containerWP(600px, 0 40px);
+}
+
+@media (max-width: 768px) {
+  .home {
+    .header {
+      min-height: 400px;
+    }
+    .skills {
+      min-height: 250px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    .header {
+    }
+    .skills {
+    }
+  }
+}

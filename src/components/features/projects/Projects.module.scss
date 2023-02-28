@@ -1,0 +1,132 @@
+@import "../../../index.scss";
+
+.projects {
+  min-height: 100%;
+  background-color: var(--main);
+  transition: 0.3s ease-in-out;
+  padding: 10px 0 20px 0;
+  h2 {
+    text-align: center;
+    color: $contrast-color;
+  }
+  .projectsList {
+    margin-top: 20px;
+    @include flexAJ(center, space-between);
+    flex-wrap: wrap;
+    gap: 20px;
+    .projectsLink {
+      overflow: hidden;
+      border-radius: $perfect-border-radius;
+      text-align: center;
+      box-shadow: 0 0px 4px $contrast-color;
+
+      transition: box-shadow 0.1s ease;
+      &:hover {
+        box-shadow: 0 2px 10px 2px $contrast-color;
+      }
+      .projectsItem {
+        background-color: var(--secondary);
+        height: 350px;
+        width: 400px;
+        font-size: 1.2rem;
+
+        .projectsImg {
+          height: 300px;
+          width: 100%;
+
+          border-radius: $perfect-border-radius;
+        }
+        .projectsText {
+          color: var(--main);
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .moreProjects {
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--secondary);
+    .githubLink {
+      font-size: 1.8rem;
+      color: $contrast-color;
+      display: inline-block;
+      text-shadow: 0px 0px 10px $contrast-color;
+
+      animation: show 0.01s forwards, pop-word 1.5s forwards;
+      animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);
+      opacity: 0;
+
+      transform: rotateX(120deg);
+      transform-origin: 50% 100%;
+
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+@keyframes pop-word {
+  to {
+    transform: rotateX(0);
+  }
+}
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  @include containerWP(900px, 0 20px);
+}
+
+@media (max-width: 880px) {
+  .projects {
+    .projectsList {
+      @include flexAJ(center, center);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .projects {
+    .projectsList {
+      .projectsLink {
+        .projectsItem {
+          height: 300px;
+          width: 300px;
+          .projectsImg {
+            height: 250px;
+          }
+        }
+      }
+    }
+    .moreProjects {
+      font-size: 1.6rem;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .projects {
+    .projectsList {
+      .projectsLink {
+        .projectsItem {
+          height: 300px;
+          width: 250px;
+          .projectsImg {
+            height: 250px;
+          }
+        }
+      }
+    }
+    .moreProjects {
+      font-size: 1.6rem;
+    }
+  }
+}

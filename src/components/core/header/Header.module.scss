@@ -1,0 +1,121 @@
+@import "../../../index";
+
+.header {
+  min-height: 50px;
+  padding: 10px 20px;
+  @include flexAJ(center, space-between);
+
+  border-bottom: 2px solid rgba(20, 20, 20, 0.8);
+  background-color: var(--main);
+  .headerTitle {
+    color: var(--secondary);
+    font-weight: 400;
+    span {
+      &:first-child {
+        font-weight: 700;
+      }
+    }
+  }
+  .features {
+    display: flex;
+    .themeChanger {
+      height: 25px;
+      width: 60px;
+
+      margin-right: 20px;
+      .themeChangerInput {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 1px;
+        opacity: 0;
+
+        &:checked + label::after {
+          left: 33px;
+          background: url("/src/assets/sun.jpg") 50% 50% / cover no-repeat;
+        }
+        &:checked + label:before {
+          background: url("/src/assets/day.jpg") 50% 50% / cover no-repeat;
+        }
+      }
+      label {
+        position: relative;
+        &::before,
+        &:after {
+          content: "";
+          display: inline-block;
+          transition: background 0.2s ease-in-out, left 0.3s ease-in-out;
+        }
+        &:before {
+          height: 100%;
+          width: 100%;
+
+          background: url("/src/assets/night.jpg") 50% 50% / cover no-repeat;
+          border-radius: 20px;
+        }
+        &:after {
+          height: 25px;
+          width: 25px;
+
+          position: absolute;
+          top: -8px;
+          left: 2px;
+
+          background: url("/src/assets/moon.jpg") 50% 50% / cover no-repeat;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .features {
+      .themeChanger {
+        margin: 0 10px;
+
+        label {
+          &:before {
+          }
+        }
+        .themeChangerInput {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    align-items: start;
+    .headerTitle {
+      font-size: 1.3rem;
+    }
+    .features {
+      .themeChanger {
+        margin-right: 40px;
+        height: 25px;
+        width: 60px;
+        label {
+          &:before {
+            content: "";
+          }
+        }
+        .themeChangerInput {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    .features {
+      .themeChanger {
+        display: none;
+      }
+    }
+  }
+}
