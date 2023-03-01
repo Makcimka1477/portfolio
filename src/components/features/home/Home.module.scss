@@ -1,6 +1,12 @@
 @import "../../../index";
 
+.wrapper {
+  @include containerWP(600px, 0 40px);
+}
+
 .home {
+  flex: 1;
+  min-height: 100%;
   text-align: center;
   background-color: var(--main);
   transition: background-color 0.2s ease-in-out;
@@ -8,7 +14,7 @@
     min-height: 600px;
     color: var(--secondary);
     @include flexAJ(center, center);
-
+    flex: 1;
     h1:first-child {
       margin-bottom: 10px;
     }
@@ -23,8 +29,7 @@
 
   .skills {
     @include flexAJ(center, center);
-    min-height: 200px;
-    margin-bottom: 20px;
+    min-height: 300px;
 
     background-color: var(--secondary);
     color: var(--main);
@@ -47,10 +52,6 @@
       }
     }
   }
-}
-
-.wrapper {
-  @include containerWP(600px, 0 40px);
 }
 
 @media (max-width: 768px) {
