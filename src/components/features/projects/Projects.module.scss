@@ -23,7 +23,7 @@
 
       transition: box-shadow 0.1s ease;
       &:hover {
-        box-shadow: 0 2px 10px 2px $contrast-color;
+        opacity: 0.8;
       }
       .projectsItem {
         background-color: var(--secondary);
@@ -34,8 +34,6 @@
         .projectsImg {
           height: 300px;
           width: 100%;
-
-          border-radius: $perfect-border-radius;
         }
         .projectsText {
           position: relative;
@@ -91,11 +89,34 @@
   .projects {
     .projectsList {
       @include flexAJ(center, center);
+      .projectsLink {
+        .projectsItem {
+          height: 300px;
+          width: 300px;
+          .projectsImg {
+            height: 250px;
+          }
+        }
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
+  .projects {
+    .projectsList {
+      @include flexAJ(center, center);
+      .projectsLink {
+        .projectsItem {
+          height: 350px;
+          width: 450px;
+          .projectsImg {
+            height: 85%;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -103,10 +124,10 @@
     .projectsList {
       .projectsLink {
         .projectsItem {
-          height: 300px;
+          height: 250px;
           width: 300px;
           .projectsImg {
-            height: 250px;
+            height: 200px;
           }
         }
       }

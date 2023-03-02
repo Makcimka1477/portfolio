@@ -3,7 +3,6 @@ import css from "./Projects.module.scss";
 import marvel from "../../../assets/projects/projectMarvel.png";
 import food from "../../../assets/projects/projectFood.png";
 import weather from "../../../assets/projects/projectWeather.png";
-// import weather from "../../../assets/projects/projectWeather.png";
 
 import Title from "../ui/Title";
 
@@ -12,7 +11,6 @@ const Projects = () => {
     {
       id: "weather",
       name: "Weather App",
-      // url: "./src/assets/projects/projectWeather.png",
       url: weather,
       github: "https://github.com/Makcimka1477/weatherApi",
       link: "https://weather-potfolio.netlify.app",
@@ -20,7 +18,6 @@ const Projects = () => {
     {
       id: "marvel",
       name: "Marvel App",
-      // url: "./src/assets/projects/projectMarvel.png",
       url: marvel,
       link: "https://marvel-portfolio.netlify.app",
       github: "https://github.com/Makcimka1477/marvelApi",
@@ -28,7 +25,6 @@ const Projects = () => {
     {
       id: "food",
       name: "Food Landing",
-      // url: "./src/assets/projects/projectFood.png",
       url: food,
       github: "https://github.com/Makcimka1477/foodProject",
       link: "",
