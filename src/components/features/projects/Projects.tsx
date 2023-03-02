@@ -3,6 +3,7 @@ import css from "./Projects.module.scss";
 import marvel from "../../../assets/projects/projectMarvel.png";
 import food from "../../../assets/projects/projectFood.png";
 import weather from "../../../assets/projects/projectWeather.png";
+// import weather from "../../../assets/projects/projectWeather.png";
 
 import Title from "../ui/Title";
 
