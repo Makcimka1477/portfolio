@@ -27,8 +27,7 @@ import { ThemeContext } from "../../../contexts/themeContext";
 
 // СПРЯТАТЬ БУРГЕР ЗА ABOUT
 
-// MARVEL API, FOOD на гитхаб оттуда выгрузить в интернет
-// Разобраться с гитом
+// responsive marvel app
 
 function App() {
   return (

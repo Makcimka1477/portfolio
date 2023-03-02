@@ -6,20 +6,23 @@ const Projects = () => {
     {
       id: "weather",
       name: "Weather App",
-      url: "/src/assets/projects/projectWeather.png",
-      link: "https://glistening-sprinkles-709332.netlify.app",
+      url: "./src/assets/projects/projectWeather.png",
+      github: "https://github.com/Makcimka1477/weatherApi",
+      link: "https://weather-potfolio.netlify.app",
     },
     {
       id: "marvel",
       name: "Marvel App",
-      url: "/src/assets/projects/projectMarvel.png",
-      link: "https://github.com/Makcimka1477/marvelApi",
+      url: "./src/assets/projects/projectMarvel.png",
+      link: "https://marvel-portfolio.netlify.app",
+      github: "https://github.com/Makcimka1477/marvelApi",
     },
     {
       id: "food",
       name: "Food Landing",
-      url: "/src/assets/projects/projectFood.png",
-      link: "https://github.com/Makcimka1477/foodProject",
+      url: "./src/assets/projects/projectFood.png",
+      github: "https://github.com/Makcimka1477/foodProject",
+      link: "",
     },
   ];
 
@@ -57,6 +60,7 @@ interface IProjects {
   name: string;
   url: string;
   link: string;
+  github: string;
 }
 
 export default Projects;
