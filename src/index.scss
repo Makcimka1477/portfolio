@@ -2,14 +2,14 @@
 // THEME VARS
 // // dark theme
 :root[data-theme="dark"] {
-  --main: rgb(36, 36, 36);
+  --main: rgba(36, 36, 36, 0.95);
   --secondary: rgba(255, 255, 255, 0.95);
 }
 
 // // light theme
 :root[data-theme="light"] {
   --main: rgba(255, 255, 255, 0.95);
-  --secondary: rgba(36, 36, 36, 1);
+  --secondary: rgba(36, 36, 36, 0.95);
 }
 
 // SCSS
@@ -69,6 +69,7 @@ body {
 
 body {
   color: var(--secondary-dark);
+  scroll-behavior: smooth;
 }
 
 // BUTTONS

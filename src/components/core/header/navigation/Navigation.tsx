@@ -2,8 +2,15 @@ import css from "./Navigation.module.scss";
 
 import { NavLink } from "react-router-dom";
 import Burger from "../../../features/burger/Burger";
+import { useState } from "react";
 
 const Navigation = (): JSX.Element => {
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
+  const burgerHandler = (e: React.MouseEvent): void => {
+    setIsBurgerOpen((isOpen: boolean): boolean => !isOpen);
+  };
+
   const linksItems: IRoute[] = [
     {
       label: "HOME",
@@ -42,7 +49,7 @@ const Navigation = (): JSX.Element => {
         <div className={css.navigationPanel}>
           <ul className={css.navigationList}>{renderLinks}</ul>
         </div>
-        <Burger>
+        <Burger isBurgerOpen={isBurgerOpen} burgerHandler={burgerHandler}>
           <ul className={css.navigationList}>{renderLinks}</ul>
         </Burger>
       </nav>

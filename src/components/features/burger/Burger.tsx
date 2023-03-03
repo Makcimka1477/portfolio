@@ -1,15 +1,13 @@
 import css from "./Burger.module.scss";
 
-import { useState } from "react";
-
-const Burger = ({ children }: IProps) => {
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-
+const Burger = ({ children, isBurgerOpen, burgerHandler }: IProps) => {
   const isActive = isBurgerOpen ? css.active : "";
 
-  const burgerHandler = (): void => {
-    setIsBurgerOpen((isOpen: boolean): boolean => !isOpen);
-  };
+  if (isBurgerOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
 
   return (
     <div className={css.burgerWrapper}>
@@ -19,7 +17,7 @@ const Burger = ({ children }: IProps) => {
         <span></span>
       </div>
 
-      <div className={`${css.sideMenu} ${isActive}`}>
+      <div onClick={burgerHandler} className={`${css.sideMenu} ${isActive}`}>
         <ul className={css.navigationList}>{children}</ul>
       </div>
     </div>
@@ -27,7 +25,9 @@ const Burger = ({ children }: IProps) => {
 };
 
 interface IProps {
+  isBurgerOpen: boolean;
   children: React.ReactNode;
+  burgerHandler: (e: React.MouseEvent) => void;
 }
 
 export default Burger;

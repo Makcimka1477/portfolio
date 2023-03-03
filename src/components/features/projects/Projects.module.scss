@@ -10,40 +10,46 @@
     text-align: center;
     color: $contrast-color;
   }
-  .projectsList {
-    margin-top: 20px;
-    @include flexAJ(center, space-between);
-    flex-wrap: wrap;
-    gap: 20px;
-    .projectsLink {
-      overflow: hidden;
-      border-radius: $perfect-border-radius;
-      text-align: center;
-      box-shadow: 0 0px 4px $contrast-color;
+  .wrapper {
+    @include containerWP(700px, 0 40px);
 
-      transition: box-shadow 0.1s ease;
-      &:hover {
-        opacity: 0.8;
-      }
-      .projectsItem {
-        background-color: var(--secondary);
-        height: 350px;
-        width: 400px;
-        font-size: 1.2rem;
+    .projectsList {
+      margin-top: 20px;
+      @include flexAJ(center, space-between);
+      flex-wrap: wrap;
+      gap: 50px;
+      .projectsLink {
+        overflow: hidden;
 
-        .projectsImg {
-          height: 300px;
-          width: 100%;
+        border-radius: $perfect-border-radius;
+        box-shadow: 0 0 5px var(--secondary);
+        text-align: center;
+
+        transition: opacity 0.1s ease;
+        &:hover {
+          opacity: 0.9;
         }
-        .projectsText {
-          position: relative;
-          color: var(--main);
-          font-size: 1.4rem;
-          font-weight: 600;
+        .projectsItem {
+          background-color: var(--secondary);
+
+          font-size: 1.2rem;
+
+          .projectsImg {
+            max-height: 85%;
+            max-width: 100%;
+          }
+          .projectInfo {
+            padding: 10px 20px;
+            .projectsStack {
+              font-size: 1.2rem;
+              color: var(--main);
+            }
+          }
         }
       }
     }
   }
+
   .moreProjects {
     margin-top: 20px;
     font-weight: 600;
@@ -81,77 +87,18 @@
   }
 }
 
-.wrapper {
-  @include containerWP(900px, 0 20px);
-}
+// @media (max-width: 960px) {
+// }
 
-@media (max-width: 880px) {
-  .projects {
-    .projectsList {
-      @include flexAJ(center, center);
-      .projectsLink {
-        .projectsItem {
-          height: 300px;
-          width: 300px;
-          .projectsImg {
-            height: 250px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .projects {
-    .projectsList {
-      @include flexAJ(center, center);
-      .projectsLink {
-        .projectsItem {
-          height: 350px;
-          width: 450px;
-          .projectsImg {
-            height: 85%;
-          }
-        }
-      }
-    }
-  }
-}
+// @media (max-width: 768px) {
+// }
 
 @media (max-width: 480px) {
   .projects {
-    .projectsList {
-      .projectsLink {
-        .projectsItem {
-          height: 250px;
-          width: 300px;
-          .projectsImg {
-            height: 200px;
-          }
-        }
-      }
-    }
     .moreProjects {
       font-size: 1.6rem;
     }
   }
 }
-@media (max-width: 320px) {
-  .projects {
-    .projectsList {
-      .projectsLink {
-        .projectsItem {
-          height: 300px;
-          width: 250px;
-          .projectsImg {
-            height: 250px;
-          }
-        }
-      }
-    }
-    .moreProjects {
-      font-size: 1.6rem;
-    }
-  }
-}
+// @media (max-width: 320px) {
+// }

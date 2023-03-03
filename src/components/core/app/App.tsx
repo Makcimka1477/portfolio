@@ -29,6 +29,18 @@ import { ThemeContext } from "../../../contexts/themeContext";
 
 // responsive marvel app
 
+// background
+// html[data-theme="dark"] {
+//   .home {
+//     background-image: url("https://phonoteka.org/uploads/posts/2022-01/thumbs/1643116770_13-phonoteka-org-p-chernii-strogii-fon-17.jpg");
+//   }
+// }
+// html[data-theme="light"] {
+//   .home {
+//     background-image: url("https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+//   }
+// }
+
 function App() {
   return (
     <div className={css.app}>

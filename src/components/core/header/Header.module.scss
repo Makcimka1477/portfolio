@@ -1,13 +1,15 @@
 @import "../../../index";
 
 .header {
-  min-height: 50px;
-  padding: 10px 20px;
+  padding: 5px 15px;
   @include flexAJ(center, space-between);
+  max-height: 50px;
 
   border-bottom: 2px solid rgba(20, 20, 20, 0.8);
   background-color: var(--main);
   .headerTitle {
+    padding-top: 5px;
+
     color: var(--secondary);
     font-weight: 400;
     span {
@@ -17,12 +19,12 @@
     }
   }
   .features {
-    display: flex;
+    @include flexAJ(center, center);
+
     .themeChanger {
       height: 25px;
       width: 60px;
-
-      margin-right: 20px;
+      margin: 0 15px;
       .themeChangerInput {
         position: absolute;
         top: 0;
@@ -30,6 +32,7 @@
         height: 1px;
         width: 1px;
         opacity: 0;
+        user-select: none;
 
         &:checked + label::after {
           left: 33px;
@@ -74,8 +77,6 @@
   .header {
     .features {
       .themeChanger {
-        margin: 0 10px;
-
         label {
           &:before {
           }
@@ -95,12 +96,10 @@
     }
     .features {
       .themeChanger {
-        margin-right: 40px;
-        height: 25px;
-        width: 60px;
+        margin-right: 20px;
+        margin-left: 10px;
         label {
           &:before {
-            content: "";
           }
         }
         .themeChangerInput {

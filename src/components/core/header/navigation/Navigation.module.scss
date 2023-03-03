@@ -23,7 +23,7 @@
             border-bottom: 2px solid $contrast-color;
           }
           &:hover {
-            // color: darken(var(--secondary-dark), 10%);
+            filter: contrast(10%);
           }
         }
       }
@@ -36,15 +36,12 @@
 
 @media (max-width: 480px) {
   .navigation {
-    position: fixed;
-    right: 10px;
     .navigationPanel {
       display: none;
     }
 
     .navigationItem {
       font-weight: 600;
-
       a {
         color: var(--main);
         border-bottom: 2px solid transparent;
@@ -53,7 +50,7 @@
           border-bottom: 2px solid rgb(87, 77, 151);
         }
         &:hover {
-          // color: lighten(var(--secondary-dark), 20%);
+          filter: contrast(10%);
         }
       }
 

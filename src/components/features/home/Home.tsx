@@ -5,7 +5,7 @@ const Home = () => {
   const mySkills = [
     "HTML",
     "CSS",
-    "SASS/SCSS",
+    "SCSS",
     "JavaScript",
     "React",
     "Redux",
@@ -24,9 +24,13 @@ const Home = () => {
     <div className={css.home}>
       <header className={css.header}>
         <div className={css.wrapper}>
-          <Title fontSize="2rem" tagName="h1" title="Hi, I'm Max" />
           <Title
-            fontSize="1.4rem"
+            styles={{ fontSize: "2rem" }}
+            tagName="h1"
+            title="Hi, I'm Max"
+          />
+          <Title
+            styles={{ fontSize: "1.4rem" }}
             tagName="h2"
             title="a novice frontend developer"
           />
@@ -38,7 +42,11 @@ const Home = () => {
 
       <div className={css.skills}>
         <div className={css.wrapper}>
-          <Title fontSize="2rem" tagName="h2" title="Frontend skills" />
+          <Title
+            styles={{ fontSize: "1.4rem" }}
+            tagName="h2"
+            title="Frontend skills"
+          />
           <ul className={css.mySkillsList}>{mySkillsItems}</ul>
         </div>
       </div>

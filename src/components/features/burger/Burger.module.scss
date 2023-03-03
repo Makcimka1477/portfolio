@@ -1,18 +1,16 @@
 @import "../../../index.scss";
 
 .burgerWrapper {
-  position: fixed;
-  top: 2px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
   .burger {
+    display: none;
+
     position: relative;
-    width: 100%;
-    height: 100%;
+
+    width: 30px;
+    height: 30px;
+
     cursor: pointer;
 
-    display: none;
     span {
       position: absolute;
       top: 50%;
@@ -21,8 +19,8 @@
       width: 100%;
 
       background-color: var(--secondary);
-
       border-radius: $perfect-border-radius;
+
       transition: 0.2s ease-out;
       &:first-child {
         transform: translateY(-15px);
@@ -50,38 +48,41 @@
   }
 
   .sideMenu {
-    display: none;
+    position: fixed;
+    top: 50px;
+    right: 0;
 
-    position: absolute;
-    right: -10px;
-    top: 48px;
-
-    width: 150px;
-    min-height: 250px;
-
-    transform: translateX(250px);
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
 
     background-color: var(--secondary);
-    overflow: hidden;
+    transform: translateX(100%);
 
+    transition: transform 0.5s ease;
     &.active {
       transform: translateX(0px);
     }
 
     .navigationList {
-      padding: 15px 20px;
+      @include flexAJ(center, space-around);
+      height: 100vh;
+
       font-size: 1.2rem;
+      text-align: center;
+      li {
+        font-weight: 700;
+        a {
+          padding: 5px 10px;
+        }
+        &:not(:last-child) {
+          margin-bottom: 80px;
+        }
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .burgerWrapper {
-    .burger {
-      display: none;
-    }
-  }
 }
 
 @media (max-width: 480px) {
@@ -89,18 +90,16 @@
     .burger {
       display: block;
     }
+
     .sideMenu {
       display: block;
     }
   }
 }
+
 @media (max-width: 320px) {
-  .burgerWrapper {
-    .burger {
-      display: block;
-    }
-    .sideMenu {
-      display: block;
-    }
+  .burger {
+  }
+  .sideMenu {
   }
 }

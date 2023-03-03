@@ -1,13 +1,14 @@
 import { createElement } from "react";
 
 interface IProps {
-  fontSize: string;
   tagName: string;
   title: string;
+  styles: object;
+  // fontSize: string;
 }
 
-const Title = ({ fontSize, tagName, title }: IProps) => {
-  return createElement(`${tagName}`, { style: { fontSize } }, title);
+const Title = ({ styles, tagName, title }: IProps) => {
+  return createElement(`${tagName}`, { style: styles }, title);
 };
 
 export default Title;
