@@ -10,7 +10,9 @@ const Project = () => {
 
   const projects = useContext(ProjectsContext);
 
-  const project: IProject = projects.find((el) => el.id === params.id);
+  const project: IProject | any = projects.find((el) => el.id === params.id);
+
+  console.log(project);
 
   return (
     <div className={css.project}>

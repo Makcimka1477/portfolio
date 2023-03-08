@@ -4,7 +4,7 @@ import marvel from "../assets/projects/projectMarvel.png";
 import food from "../assets/projects/projectFood.png";
 import weather from "../assets/projects/projectWeather.png";
 
-export const projects: IProjects[] = [
+export const projects: IProject[] = [
   {
     id: "weather",
     name: "Weather App",
