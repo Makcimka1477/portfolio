@@ -1,0 +1,54 @@
+@import "../../../index.scss";
+
+.project {
+  @include flexAJ(center, center);
+  flex: 1;
+
+  background-color: var(--main);
+  text-align: center;
+  .wrapper {
+    @include containerWP(800px, 0 20px);
+
+    .projectInfo {
+      margin-top: 20px;
+
+      .projectLink {
+        .projectImg {
+          @include imgSizeWH(100%, 100%);
+
+          border-radius: $perfect-border-radius;
+        }
+      }
+      .projectStack {
+        color: var(--secondary);
+        margin-top: 10px;
+
+        font-size: 1.4rem;
+        text-align: center;
+      }
+    }
+
+    .githubLinkBtn {
+      margin: 10px auto 0;
+      padding: 10px;
+      display: block;
+      max-width: 150px;
+      text-align: center;
+
+      cursor: pointer;
+
+      border: 1px solid transparent;
+      color: var(--main);
+      background-color: var(--secondary);
+      border-radius: $perfect-border-radius;
+
+      font-weight: 500;
+
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        box-shadow: 0 2px 10px #646cff;
+      }
+    }
+  }
+}

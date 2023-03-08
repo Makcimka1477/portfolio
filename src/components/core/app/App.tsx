@@ -14,20 +14,13 @@ import HomePage from "../../../pages/HomePage";
 import Header from "../header/Header";
 
 import { ThemeContext } from "../../../contexts/themeContext";
-
-// HOVER EFFECTS AND ANIMATIONS
+import ProjectsProvider from "../../../contexts/projects-provider/ProjectsProvider";
 
 // PORTFOLIO SITES
+// HOVER EFFECTS AND ANIMATIONS
+// ACTIVE EFFECTS BUTTON
 
 // WRAPPER STYLES IN TO INDEX.SCSS
-
-// СЖАТЬ КАРТИНКИ ТЕМЫ
-
-// Разделить компоненты навигации
-
-// СПРЯТАТЬ БУРГЕР ЗА ABOUT
-
-// responsive marvel app
 
 // background
 // html[data-theme="dark"] {
@@ -56,17 +49,22 @@ function App() {
           </Route>
 
           <Route exact path="/projects">
-            <ProjectsPage />
-            <Route path="/projects/:id">
+            <ProjectsProvider>
+              <ProjectsPage />
+            </ProjectsProvider>
+          </Route>
+
+          <Route path="/projects/:id">
+            <ProjectsProvider>
               <ProjectPage />
-            </Route>
+            </ProjectsProvider>
           </Route>
 
           <Route exact path="/">
             <HomePage />
           </Route>
 
-          <Redirect to={"/"} />
+          {/* <Redirect to={"/"} /> */}
         </Switch>
       </Router>
     </div>

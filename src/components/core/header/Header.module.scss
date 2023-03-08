@@ -1,9 +1,11 @@
 @import "../../../index";
 
 .header {
-  padding: 5px 15px;
   @include flexAJ(center, space-between);
+
   max-height: 50px;
+
+  padding: 5px 15px;
 
   border-bottom: 2px solid rgba(20, 20, 20, 0.8);
   background-color: var(--main);
@@ -24,13 +26,16 @@
     .themeChanger {
       height: 25px;
       width: 60px;
+
       margin: 0 15px;
       .themeChangerInput {
         position: absolute;
         top: 0;
         left: 0;
+
         height: 1px;
         width: 1px;
+
         opacity: 0;
         user-select: none;
 
@@ -73,24 +78,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .header {
-    .features {
-      .themeChanger {
-        label {
-          &:before {
-          }
-        }
-        .themeChangerInput {
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 480px) {
   .header {
-    align-items: start;
     .headerTitle {
       font-size: 1.3rem;
     }
@@ -110,11 +99,7 @@
 }
 
 @media (max-width: 320px) {
-  .header {
-    .features {
-      .themeChanger {
-        display: none;
-      }
-    }
+  .themeChanger {
+    display: none;
   }
 }

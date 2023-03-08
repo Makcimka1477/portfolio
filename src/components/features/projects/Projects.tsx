@@ -1,52 +1,19 @@
 import css from "./Projects.module.scss";
 
-import marvel from "../../../assets/projects/projectMarvel.png";
-import food from "../../../assets/projects/projectFood.png";
-import weather from "../../../assets/projects/projectWeather.png";
+import { NavLink, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { ProjectsContext } from "../../../contexts/projectsContext";
 
 import Title from "../ui/Title";
+// STACK TO ARRAY FROM STRING
 
 const Projects = () => {
-  const projectUrls: IProjects[] = [
-    {
-      id: "weather",
-      name: "Weather App",
-      url: weather,
-      github: "https://github.com/Makcimka1477/weatherApi",
-      stack: "html sass javascript reactjs redux",
-      // link: "https://weather-potfolio.netlify.app",
-      link: "",
-    },
-    {
-      id: "marvel",
-      name: "Marvel App",
-      url: marvel,
-      github: "https://github.com/Makcimka1477/marvelApi",
-      stack: "html sass javascript reactjs",
-      // link: "https://marvel-portfolio.netlify.app",
-      link: "",
-    },
-    {
-      id: "food",
-      name: "Food Landing",
-      url: food,
-      github: "https://github.com/Makcimka1477/foodProject",
-      stack: "html css javascript",
-      link: "",
-    },
-    {
-      id: "new",
-      name: "new App",
-      url: "new",
-      github: "https://github.com/Makcimka1477/",
-      stack: "html sass javascript reactjs redux",
-      // link: "https://-portfolio.netlify.app",
-      link: "",
-    },
-  ];
+  const { pathname } = useLocation();
 
-  const projectItems = projectUrls.map(({ id, name, url, link, stack }) => (
-    <a key={id} className={css.projectsLink} target="_blank" href={link}>
+  const projects = useContext(ProjectsContext);
+
+  const projectItems = projects.map(({ id, name, url, stack }) => (
+    <NavLink to={`${pathname}/${id}`} key={id} className={css.projectsLink}>
       <li className={css.projectsItem}>
         <img className={css.projectsImg} src={url} alt="project" />
         <div className={css.projectInfo}>
@@ -58,7 +25,7 @@ const Projects = () => {
           <p className={css.projectsStack}>{stack}</p>
         </div>
       </li>
-    </a>
+    </NavLink>
   ));
 
   return (
@@ -67,7 +34,7 @@ const Projects = () => {
       <div className={css.wrapper}>
         <ul className={css.projectsList}>{projectItems}</ul>
         <footer className={css.moreProjects}>
-          My repository you can find{" "}
+          My repository you can find
           <a
             className={css.githubLink}
             href="https://github.com/Makcimka1477"
@@ -81,13 +48,6 @@ const Projects = () => {
   );
 };
 
-interface IProjects {
-  id: string;
-  name: string;
-  url: string;
-  link: string;
-  github: string;
-  stack: string;
-}
+
 
 export default Projects;

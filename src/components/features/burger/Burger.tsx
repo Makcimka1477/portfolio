@@ -1,6 +1,6 @@
 import css from "./Burger.module.scss";
 
-const Burger = ({ children, isBurgerOpen, burgerHandler }: IProps) => {
+const Burger = ({ isBurgerOpen, burgerHandler }: IProps) => {
   const isActive = isBurgerOpen ? css.active : "";
 
   if (isBurgerOpen) {
@@ -10,23 +10,16 @@ const Burger = ({ children, isBurgerOpen, burgerHandler }: IProps) => {
   }
 
   return (
-    <div className={css.burgerWrapper}>
-      <div onClick={burgerHandler} className={`${css.burger} ${isActive}`}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div onClick={burgerHandler} className={`${css.sideMenu} ${isActive}`}>
-        <ul className={css.navigationList}>{children}</ul>
-      </div>
+    <div onClick={burgerHandler} className={`${css.burger} ${isActive}`}>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   );
 };
 
 interface IProps {
   isBurgerOpen: boolean;
-  children: React.ReactNode;
   burgerHandler: (e: React.MouseEvent) => void;
 }
 
