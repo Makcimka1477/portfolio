@@ -8,8 +8,6 @@ import Title from "../ui/Title";
 const Project = () => {
   const params: IParams = useParams();
 
-  // OVERFLOW HIDDEN
-  console.log(params);
   const projects = useContext(ProjectsContext);
 
   const project: IProject = projects.find((el) => el.id === params.id);

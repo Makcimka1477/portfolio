@@ -12,6 +12,12 @@ const Navigation = (): JSX.Element => {
     setIsBurgerOpen((isOpen: boolean): boolean => !isOpen);
   };
 
+  if (isBurgerOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
   return (
     <>
       <nav className={css.navigation}>

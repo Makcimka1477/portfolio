@@ -32,6 +32,10 @@
 
   &.active {
     span {
+      &:first-child,
+      &:last-child {
+        top: 50%;
+      }
       &:first-child {
         transform: rotate(-45deg);
       }
