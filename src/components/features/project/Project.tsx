@@ -12,8 +12,6 @@ const Project = () => {
 
   const project: IProject | any = projects.find((el) => el.id === params.id);
 
-  console.log(project);
-
   return (
     <div className={css.project}>
       <div className={css.wrapper}>
@@ -21,18 +19,47 @@ const Project = () => {
           styles={{
             fontSize: "1.8rem",
             color: "var(--secondary)",
+            textAlign: "center",
           }}
           title={project.name}
           tagName={"h2"}
         />
+
         <figure className={css.projectInfo}>
-          <a className={css.projectLink} href={project.link} target="_blank">
+          <a
+            className={css.projectLink}
+            href={project.link}
+            target="_blank"
+            title="link"
+          >
             <img className={css.projectImg} src={project.url} alt="project" />
           </a>
-          <figcaption className={css.projectStack}>{project.stack}</figcaption>
+          <figcaption className={css.projectStack}>
+            {project.stack.join(" ")}
+          </figcaption>
         </figure>
 
-        <a className={css.githubLinkBtn}> GitHub repo</a>
+        <div className={css.projectLinks}>
+          <a className={css.link} href={project.github}>
+            <img
+              className={css.logo}
+              src="/src/assets/github-logo.png"
+              alt="github-logo"
+            />
+          </a>
+          <a
+            className={css.link}
+            href={project.link}
+            target="_blank"
+            title="link"
+          >
+            <img
+              className={css.logo}
+              src="/src/assets/netlify-logo.png"
+              alt="netlify-logo"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -7,32 +7,25 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import AboutPage from "../../../pages/AboutPage";
-import ProjectPage from "../../../pages/ProjectPage";
-import ProjectsPage from "../../../pages/ProjectsPage";
-import HomePage from "../../../pages/HomePage";
-import Header from "../header/Header";
-
 import { ThemeContext } from "../../../contexts/themeContext";
 import ProjectsProvider from "../../../contexts/projects-provider/ProjectsProvider";
 
-// PORTFOLIO SITES
-// HOVER EFFECTS AND ANIMATIONS
-// ACTIVE EFFECTS BUTTON
+import {
+  AboutPage,
+  ProjectPage,
+  ProjectsPage,
+  HomePage,
+} from "../../../pages/index";
+
+import Header from "../header/Header";
 
 // WRAPPER STYLES IN TO INDEX.SCSS
 
-// background
-// html[data-theme="dark"] {
-//   .home {
-//     background-image: url("https://phonoteka.org/uploads/posts/2022-01/thumbs/1643116770_13-phonoteka-org-p-chernii-strogii-fon-17.jpg");
-//   }
-// }
-// html[data-theme="light"] {
-//   .home {
-//     background-image: url("https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
-//   }
-// }
+// ALL MY INFO IN ONE OBJECT
+// {tel: , whatsapplink, telegramlink, skills}
+
+// HOVER EFFECTS AND ANIMATIONS
+// ACTIVE EFFECTS BUTTON
 
 function App() {
   return (
@@ -64,7 +57,7 @@ function App() {
             <HomePage />
           </Route>
 
-          {/* <Redirect to={"/"} /> */}
+          <Redirect to={"/"} />
         </Switch>
       </Router>
     </div>

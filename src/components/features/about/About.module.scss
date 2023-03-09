@@ -1,0 +1,37 @@
+@import "../../../index.scss";
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+
+  text-align: center;
+  background-color: var(--secondary);
+
+  .wrapper {
+    @include containerWP(800px, 0 40px);
+
+    .title {
+      font-size: 2rem;
+    }
+    .aboutText {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      color: var(--main);
+    }
+  }
+  .contacts {
+    margin-top: 20px;
+    .title {
+      font-size: 1.6rem;
+    }
+    .links {
+      .link {
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+}

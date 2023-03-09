@@ -6,7 +6,6 @@
 
 .home {
   flex: 1;
-  min-height: 100%;
   text-align: center;
   background-color: var(--main);
   transition: background-color 0.2s ease-in-out;
@@ -15,7 +14,7 @@
     min-height: 600px;
     color: var(--secondary);
     @include flexAJ(center, center);
-    flex: 1;
+
     h1:first-child {
       margin-bottom: 10px;
     }
@@ -59,18 +58,21 @@
   .home {
     .header {
       min-height: 400px;
-    }
-    .skills {
-      min-height: 250px;
+
+      .skills {
+        min-height: 250px;
+      }
     }
   }
 }
 
 @media (max-width: 480px) {
   .home {
-    .header {
-    }
-    .skills {
+    .wrapper {
+      .header {
+      }
+      .skills {
+      }
     }
   }
 }

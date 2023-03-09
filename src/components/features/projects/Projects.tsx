@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { ProjectsContext } from "../../../contexts/projectsContext";
 
 import Title from "../ui/Title";
-// STACK TO ARRAY FROM STRING
 
 const Projects = () => {
   const { pathname } = useLocation();
@@ -22,7 +21,7 @@ const Projects = () => {
             title={name}
             tagName={"h4"}
           />
-          <p className={css.projectsStack}>{stack}</p>
+          <p className={css.projectsStack}>{stack.join(" ")}</p>
         </div>
       </li>
     </NavLink>
@@ -34,20 +33,25 @@ const Projects = () => {
       <div className={css.wrapper}>
         <ul className={css.projectsList}>{projectItems}</ul>
         <footer className={css.moreProjects}>
-          My repository you can find
-          <a
-            className={css.githubLink}
-            href="https://github.com/Makcimka1477"
-            target="_blank"
-          >
-            here
-          </a>
+          <p className={css.moreProjectText}>GitHub page You can find here</p>
+          <div className={css.projectsLinks}>
+            <a
+              className={css.link}
+              href="https://github.com/Makcimka1477"
+              target="_blank"
+              title="link"
+            >
+              <img
+                className={css.logo}
+                src="/src/assets/github-logo.png"
+                alt="github-logo"
+              />
+            </a>
+          </div>
         </footer>
       </div>
     </div>
   );
 };
-
-
 
 export default Projects;

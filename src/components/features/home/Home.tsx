@@ -1,5 +1,6 @@
-import Title from "../ui/Title";
 import css from "./Home.module.scss";
+
+import Title from "../ui/Title";
 
 const Home = () => {
   const mySkills = [

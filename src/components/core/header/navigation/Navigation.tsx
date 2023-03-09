@@ -9,6 +9,12 @@ const Navigation = (): JSX.Element => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   const burgerHandler = (e: React.MouseEvent): void => {
+    const { currentTarget } = e;
+    if (!/burger/i.test(currentTarget.className)) {
+      setIsBurgerOpen((isOpen: boolean): boolean => false);
+      return;
+    }
+
     setIsBurgerOpen((isOpen: boolean): boolean => !isOpen);
   };
 
