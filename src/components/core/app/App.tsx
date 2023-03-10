@@ -20,6 +20,7 @@ import {
 import Header from "../header/Header";
 
 // WRAPPER STYLES IN TO INDEX.SCSS
+// button component
 
 // ALL MY INFO IN ONE OBJECT
 // {tel: , whatsapplink, telegramlink, skills}

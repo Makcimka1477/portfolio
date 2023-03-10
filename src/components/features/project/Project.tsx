@@ -3,7 +3,8 @@ import { useParams } from "react-router";
 import { useContext } from "react";
 import { IProject, ProjectsContext } from "../../../contexts/projectsContext";
 
-import Title from "../ui/Title";
+import Title from "../ui/Title/Title";
+import MyLink from "../ui/MyLink/MyLink";
 
 const Project = () => {
   const params: IParams = useParams();
@@ -40,25 +41,21 @@ const Project = () => {
         </figure>
 
         <div className={css.projectLinks}>
-          <a className={css.link} href={project.github}>
+          <MyLink link={project.github} style={{ height: "60px" }}>
             <img
               className={css.logo}
               src="/src/assets/github-logo.png"
               alt="github-logo"
             />
-          </a>
-          <a
-            className={css.link}
-            href={project.link}
-            target="_blank"
-            title="link"
-          >
+          </MyLink>
+
+          <MyLink link={project.hosting} style={{ height: "60px" }}>
             <img
               className={css.logo}
               src="/src/assets/netlify-logo.png"
               alt="netlify-logo"
             />
-          </a>
+          </MyLink>
         </div>
       </div>
     </div>

@@ -11,7 +11,8 @@ export const projects: IProject[] = [
     url: weather,
     github: "https://github.com/Makcimka1477/weatherApi",
     stack: ["HTML", "SASS", "JavaScript", "ReactJS", "Redux"],
-    link: "https://weather-potfolio.netlify.app",
+    hosting: "https://weather-potfolio.netlify.app",
+    apis: ["Weather Api", "2gis MapGL Api", "DaData Api"],
   },
   {
     id: "marvel",
@@ -20,7 +21,8 @@ export const projects: IProject[] = [
     github: "https://github.com/Makcimka1477/marvelApi",
     stack: ["HTML", "SASS", "JavaScript", "ReactJS"],
 
-    link: "https://marvel-portfolio.netlify.app",
+    hosting: "https://marvel-portfolio.netlify.app",
+    apis: ["https://developer.marvel.com/"],
   },
   {
     id: "food",
@@ -28,7 +30,8 @@ export const projects: IProject[] = [
     url: food,
     github: "https://github.com/Makcimka1477/foodProject",
     stack: ["HTML", "CSS", "JavaScript"],
-    link: "food-portfolio.netlify.app",
+    hosting: "food-portfolio.netlify.app",
+    apis: [],
   },
   {
     id: "new",
@@ -36,7 +39,8 @@ export const projects: IProject[] = [
     url: "new",
     github: "https://github.com/Makcimka1477/",
     stack: ["HTML", "SASS", "JavaScript", "ReactJS", "Redux"],
-    link: "https://portfolio.netlify.app",
+    hosting: "https://portfolio.netlify.app",
+    apis: [],
   },
 ];
 
@@ -44,9 +48,10 @@ export interface IProject {
   id: string;
   name: string;
   url: string;
-  link: string;
+  hosting: string;
   github: string;
   stack: string[];
+  apis: string[];
 }
 
 export const ProjectsContext = createContext(projects);

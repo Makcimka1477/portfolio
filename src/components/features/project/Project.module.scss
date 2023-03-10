@@ -36,36 +36,19 @@
     .projectLinks {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 10px;
       margin-top: 10px;
-
-      .link {
-        display: block;
-
-        width: 100px;
-        height: 50px;
-
-        padding: 5px 10px;
-
-        color: $contrast-color;
-        background-color: var(--secondary);
-        border-radius: $perfect-border-radius;
-
-        font-size: 1.4rem;
-        font-weight: 800;
-        text-align: center;
-        cursor: pointer;
-
-        transition: box-shadow 0.2s ease-in-out;
-        &:hover {
-          box-shadow: 0 0 10px 2px var(--secondary);
-        }
-        .logo {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: cover;
-        }
-      }
     }
+  }
+}
+
+.logo {
+  @include imgSizeWH(100%, 100%);
+}
+
+html[data-theme="light"] {
+  .logo {
+    filter: invert(1);
   }
 }

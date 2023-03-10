@@ -4,7 +4,6 @@ interface IProps {
   tagName: string;
   title: string;
   styles: object;
-  // fontSize: string;
 }
 
 const Title = ({ styles, tagName, title }: IProps) => {

@@ -1,0 +1,27 @@
+@import "../../../../index.scss";
+
+.myLink {
+  display: block;
+
+  min-width: 100px;
+
+  font-weight: 500;
+  color: var(--main);
+  text-align: center;
+
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: $perfect-border-radius;
+  background-color: var(--secondary);
+
+  cursor: pointer;
+
+  transition: box-shadow 0.1s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px 1px var(--secondary);
+  }
+  &:focus,
+  &:focus-visible {
+    box-shadow: 0 0 10px 1px var(--secondary);
+  }
+}

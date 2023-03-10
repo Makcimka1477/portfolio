@@ -1,6 +1,19 @@
+import MyLink from "../ui/MyLink/MyLink";
 import css from "./About.module.scss";
 
 const About = () => {
+  const contacts = [
+    { link: "tel:8-916-716-47-00", children: "Phone" },
+    { link: "https://t.me/+79167164700", children: "Telegram" },
+    { link: "https://wa.me/+79167164700", children: "WhatsApp" },
+  ];
+
+  const contactsItem = contacts.map(({ link, children }) => (
+    <li key={children} className={css.linkItem}>
+      <MyLink link={link}>{children}</MyLink>
+    </li>
+  ));
+
   return (
     <div className={css.about}>
       <div className={css.wrapper}>
@@ -13,18 +26,7 @@ const About = () => {
       </div>
 
       <div className={css.contacts}>
-        <h4 className={css.title}>Contacts:</h4>
-        <div className={css.links}>
-          <a className={css.link} href="tel:8-916-716-47-00">
-            Phone: 8-916-716-47-00
-          </a>
-          <a className={css.link} href="https://t.me/+79167164700">
-            Telegram
-          </a>
-          <a className={css.link} href="https://wa.me/+79167164700">
-            WhatsApp
-          </a>
-        </div>
+        <ul className={css.linkList}>{contactsItem}</ul>
       </div>
     </div>
   );

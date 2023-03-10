@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { ProjectsContext } from "../../../contexts/projectsContext";
 
 import Title from "../ui/Title";
+import MyLink from "../ui/MyLink/MyLink";
 
 const Projects = () => {
   const { pathname } = useLocation();
@@ -12,7 +13,12 @@ const Projects = () => {
   const projects = useContext(ProjectsContext);
 
   const projectItems = projects.map(({ id, name, url, stack }) => (
-    <NavLink to={`${pathname}/${id}`} key={id} className={css.projectsLink}>
+    <NavLink
+      to={`${pathname}/${id}`}
+      key={id}
+      className={css.projectsLink}
+      title="link"
+    >
       <li className={css.projectsItem}>
         <img className={css.projectsImg} src={url} alt="project" />
         <div className={css.projectInfo}>
@@ -35,18 +41,16 @@ const Projects = () => {
         <footer className={css.moreProjects}>
           <p className={css.moreProjectText}>GitHub page You can find here</p>
           <div className={css.projectsLinks}>
-            <a
-              className={css.link}
-              href="https://github.com/Makcimka1477"
-              target="_blank"
-              title="link"
+            <MyLink
+              link="https://github.com/Makcimka1477"
+              style={{ height: "60px" }}
             >
               <img
                 className={css.logo}
                 src="/src/assets/github-logo.png"
                 alt="github-logo"
               />
-            </a>
+            </MyLink>
           </div>
         </footer>
       </div>
