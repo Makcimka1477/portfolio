@@ -22,6 +22,8 @@ import Header from "../header/Header";
 // WRAPPER STYLES IN TO INDEX.SCSS
 // button component
 
+// DOWNLOAD CV
+
 // ALL MY INFO IN ONE OBJECT
 // {tel: , whatsapplink, telegramlink, skills}
 

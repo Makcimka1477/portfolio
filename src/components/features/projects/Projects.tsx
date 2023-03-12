@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { ProjectsContext } from "../../../contexts/projectsContext";
 
-import Title from "../ui/Title";
+import Title from "../ui/Title/Title";
 import MyLink from "../ui/MyLink/MyLink";
 
 const Projects = () => {
