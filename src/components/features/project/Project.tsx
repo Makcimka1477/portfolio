@@ -3,6 +3,9 @@ import { useParams } from "react-router";
 import { useContext } from "react";
 import { IProject, ProjectsContext } from "../../../contexts/projectsContext";
 
+import github from "../../../assets/github-logo.png";
+import netlify from "../../../assets/netlify-logo.png";
+
 import Title from "../ui/Title/Title";
 import MyLink from "../ui/MyLink/MyLink";
 
@@ -42,19 +45,11 @@ const Project = () => {
 
         <div className={css.projectLinks}>
           <MyLink link={project.github} style={{ height: "60px" }}>
-            <img
-              className={css.logo}
-              src="/src/assets/github-logo.png"
-              alt="github-logo"
-            />
+            <img className={css.logo} src={github} alt="github-logo" />
           </MyLink>
 
           <MyLink link={project.hosting} style={{ height: "60px" }}>
-            <img
-              className={css.logo}
-              src="/src/assets/netlify-logo.png"
-              alt="netlify-logo"
-            />
+            <img className={css.logo} src={netlify} alt="netlify-logo" />
           </MyLink>
         </div>
       </div>

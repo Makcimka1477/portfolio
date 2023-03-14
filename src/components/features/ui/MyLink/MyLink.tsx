@@ -13,7 +13,7 @@ const MyLink = ({ link, style, children }: IProps) => {
       : { ...style, padding: "5px 10px" };
 
   return (
-    <a href={link} style={allStyles} className={css.myLink}>
+    <a href={link} style={allStyles} className={css.myLink} target="_blank">
       {children}
     </a>
   );
